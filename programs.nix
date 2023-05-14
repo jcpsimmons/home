@@ -67,4 +67,19 @@
       ];
     };
   };
+
+  gtk = {
+    enable = true;
+    theme = "catppuccin-gtk-theme-mocha";
+  };
+
+  rofi = {
+    enable = true;
+    extraConfig = {
+      modi = "drun,emoji,ssh";
+      kb-primary-paste = "Control+V,Shift+Insert";
+      kb-secondary-paste = "Control+v,Insert";
+    };
+
+  };
 }
