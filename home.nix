@@ -33,8 +33,22 @@ in
       };
       ".p10k.zsh".source = ./resources/.p10k.zsh;
       ".itermconfig.json".source = ./resources/iterm-profile.json;
+      ".config/sway/config".source = ./resources/sway-config;
     };
   };
+
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    twemoji
+  ];
 
   nixpkgs = {
     config = {

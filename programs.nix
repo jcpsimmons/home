@@ -3,6 +3,22 @@
     enable = true;
   };
 
+  waybar = {
+    enable = true;
+  };
+
+  git =
+    {
+      enable = true;
+      userName = "Josh Simmons";
+      userEmail = "joshcsimmons@icloud.com";
+      extraConfig = {
+        core.editor = "code --wait";
+        pull.ff = "only";
+        init.defaultBranch = "master";
+      };
+    };
+
   zsh = {
     enable = true;
     shellAliases = {
@@ -51,17 +67,4 @@
       ];
     };
   };
-
-
-  git =
-    {
-      enable = true;
-      userName = "Josh Simmons";
-      userEmail = "joshcsimmons@icloud.com";
-      extraConfig = {
-        core.editor = "code --wait";
-        pull.ff = "only";
-        init.defaultBranch = "master";
-      };
-    };
 }
