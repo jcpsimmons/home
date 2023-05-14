@@ -68,11 +68,6 @@
     };
   };
 
-  gtk = {
-    enable = true;
-    theme = "catppuccin-gtk-theme-mocha";
-  };
-
   rofi = {
     enable = true;
     extraConfig = {
