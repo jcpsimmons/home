@@ -12,7 +12,7 @@
   outputs = { self, nixpkgs, home-manager }:
     let
       # Values you should modify
-      username = "joshsimmons"; # $USER
+      username = "parallels"; # $USER
       system = "x86_64-linux";  # x86_64-linux, aarch64-multiplatform, etc.
       stateVersion = "22.11";     # See https://nixos.org/manual/nixpkgs/stable for most recent
 
