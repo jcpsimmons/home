@@ -39,6 +39,14 @@ in
         executable = true;
       };
       ".config/polybar/config.ini".source = ./resources/polybar-config.ini;
+      ".config/i3/launch_rofi.sh" = {
+        executable = true;
+        text = ''
+          #!${pkgs.zsh}/bin/zsh
+          rofi -show-icons -sidebar-mode -show drun
+          echo test > ~/testfile.txt
+        '';
+      };
     };
 
   };
