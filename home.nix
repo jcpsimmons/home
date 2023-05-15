@@ -43,8 +43,7 @@ in
         executable = true;
         text = ''
           #!${pkgs.zsh}/bin/zsh
-          rofi -show-icons -sidebar-mode -show drun
-          echo test > ~/testfile.txt
+          rofi -show-icons -sidebar-mode -show drun -theme DarkBlue
         '';
       };
     };
