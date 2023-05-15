@@ -18,6 +18,8 @@ let
     btop
     tmux
     terminator
+    rofi
+    polybar
 
     # fonts 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" "JetBrainsMono" ]; })

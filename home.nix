@@ -34,6 +34,11 @@ in
       ".itermconfig.json".source = ./resources/iterm-profile.json;
       ".config/i3/config".source = ./resources/i3-config;
       ".config/terminator/config".source = ./resources/terminator-config;
+      ".config/polybar/launch.sh" = {
+        source = ./resources/polybar-launch.sh;
+        executable = true;
+      };
+      ".config/polybar/config.ini".source = ./resources/polybar-config.ini;
     };
 
   };
