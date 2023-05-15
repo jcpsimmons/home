@@ -10,4 +10,7 @@
   foreground_color = "#D8DEE9"
   palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
   use_system_font = False
-  font = JetBrainsMono Nerd Font Mono 12
+  font = JetBrainsMono Nerd Font Mono 10
+  [profiles]
+    [[default]]
+      show_titlebar = false
