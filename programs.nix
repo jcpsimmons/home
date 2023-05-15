@@ -3,10 +3,6 @@
     enable = true;
   };
 
-  waybar = {
-    enable = true;
-  };
-
   git =
     {
       enable = true;
@@ -66,15 +62,5 @@
         { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
       ];
     };
-  };
-
-  rofi = {
-    enable = true;
-    extraConfig = {
-      modi = "drun,emoji,ssh";
-      kb-primary-paste = "Control+V,Shift+Insert";
-      kb-secondary-paste = "Control+v,Insert";
-    };
-
   };
 }

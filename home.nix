@@ -31,11 +31,14 @@ in
           sha256 = "050k20k7rrm2zp232iynkai5wbkb44d4ib19vn360cby80pljz4f";
         };
       };
-      ".p10k.zsh".source = ./resources/.p10k.zsh;
       ".itermconfig.json".source = ./resources/iterm-profile.json;
-      ".config/sway/config".source = ./resources/sway-config;
+      ".config/i3/config".source = ./resources/i3-config;
+      ".config/terminator/config".source = ./resources/terminator-config;
     };
+
   };
+
+  fonts.fontconfig.enable = true;
 
   nixpkgs = {
     config = {
@@ -45,6 +48,8 @@ in
       experimental-features = "nix-command flakes";
     };
   };
+
+
 
   programs = import ./programs.nix;
 }
