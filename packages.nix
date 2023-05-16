@@ -20,7 +20,7 @@ let
     terminator
     rofi
     polybar
-
+    feh  
     # fonts 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" "JetBrainsMono" ]; })
 
