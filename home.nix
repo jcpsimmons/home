@@ -36,7 +36,7 @@ in
         executable = true;
         text = ''
           #!${pkgs.zsh}/bin/zsh
-          rofi -show-icons -sidebar-mode -show drun -theme DarkBlue
+          rofi -show-icons -sidebar-mode -show run -theme DarkBlue
         '';
       };
       ".config/i3/config".text = ''
