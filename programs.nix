@@ -12,6 +12,7 @@
         core.editor = "code --wait";
         pull.ff = "only";
         init.defaultBranch = "master";
+        push.autoSetupRemote = "true";
       };
     };
 
