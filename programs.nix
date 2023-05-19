@@ -1,3 +1,5 @@
+{ pkgs }:
+
 {
   home-manager = {
     enable = true;

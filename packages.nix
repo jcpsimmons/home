@@ -1,15 +1,19 @@
-{ pkgs }:
+{ pkgs, }:
 
 let
   nixTools = with pkgs; [
     ponysay
+    python311
+    python311Packages.virtualenv
+    python311Packages.pip
     jq
     fzf
     exa
     ripgrep
     bat
     gh
-    rnix-lsp
+    nil # new formatter to replace rnix-lsp
+    nixpkgs-fmt
     killall
     tree
     speedtest-cli
@@ -25,6 +29,13 @@ let
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" "JetBrainsMono" ]; })
     google-chrome
     i3
+
+    # nixgl wrapped stuff
+    (pkgs.writeScriptBin "alacritty" ''
+      #!${pkgs.stdenv.shell}
+      ${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel ${pkgs.alacritty}/bin/alacritty $@
+    '')
+
 
     # flakes
     # cider flake (fixes breaking apple API change)

@@ -3,6 +3,7 @@
 , stateVersion
 , system
 , username
+
 }:
 
 let
@@ -46,13 +47,23 @@ in
 
         set $mod Mod4
 
+        # Colors 
+        # class                 border  bground text    indicator child_border
+        client.focused          #FF00FC #FF00FC #000000 #FF00FC   #FF00FC
+        client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+        client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+        client.urgent           #2F343A #FF0000 #FFF100 #900000   #900000
+        client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+        new_window pixel 1
+
         # Font for window titles. Will also be used by the bar unless a different font
         # is used in the bar {} block below.
-        font pango:monospace 8
+        # font pango:monospace 8
 
         # This font is widely installed, provides lots of unicode glyphs, right-to-left
         # text rendering and scalability on retina/hidpi displays (thanks to pango).
-        #font pango:DejaVu Sans Mono 8
+        font pango:DejaVu Sans Mono 10
 
         # Start XDG autostart .desktop files using dex. See also
         # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -254,5 +265,5 @@ in
 
 
 
-  programs = import ./programs.nix;
+  programs = import ./programs.nix { inherit pkgs; };
 }
