@@ -25,6 +25,7 @@ let
     rofi
     polybar
     feh
+
     # fonts 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" "JetBrainsMono" ]; })
     google-chrome

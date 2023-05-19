@@ -1,0 +1,35 @@
+window:
+  opacity: 0.8
+
+font:
+  normal:
+    family: 'JetBrainsMono Nerd Font'
+
+colors:
+  primary:
+    background: '#16141e'
+    foreground: '#eeeeee'
+  text:
+    normal: '#eeeeee'
+    bright: '#eeeeee'
+  cursor:
+    text: '#16141e'
+    cursor: '#ff00fc'
+  normal:
+    black: '#555753'
+    red: '#ff5555'
+    green: '#55ff55'
+    yellow: '#ffff55'
+    blue: '#729fcf'
+    magenta: '#ff55ff'
+    cyan: '#34e2e2'
+    white: '#eeeeec'
+  bright:
+    black: '#2e3436'
+    red: '#f70047'
+    green: '#00ff7d'
+    yellow: '#fcdd42'
+    blue: '#26b3d2'
+    magenta: '#b055f4'
+    cyan: '#ff00fc'
+    white: '#d3d7cf'

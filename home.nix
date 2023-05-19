@@ -47,6 +47,9 @@ in
 
         set $mod Mod4
 
+        # start picom
+        exec --no-startup-id picom 
+
         # Colors 
         # class                 border  bground text    indicator child_border
         client.focused          #FF00FC #FF00FC #000000 #FF00FC   #FF00FC
@@ -70,7 +73,7 @@ in
         exec --no-startup-id dex --autostart --environment i3
 
         # Load .config/wallpapers with feh
-        exec --no-startup-id ${pkgs.feh}/bin/feh --bg-fill --randomize $HOME/.config/wallpapers
+        exec --no-startup-id ${pkgs.feh}/bin/feh --bg-fill $HOME/.config/wallpapers/car.png
 
         # The combination of xss-lock, nm-applet and pactl is a popular choice, so
         # they are included here as an example. Modify as you see fit.
@@ -94,7 +97,7 @@ in
         floating_modifier $mod
 
         # start a terminal
-        bindsym $mod+Return exec terminator -e zsh
+        bindsym $mod+Return exec alacritty -e ${pkgs.zsh}/bin/zsh
 
         # kill focused window
         bindsym $mod+Shift+q kill
@@ -235,21 +238,54 @@ in
         # }
 
 
-        exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+        exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
 
       '';
       ".config/terminator/config".source = ./resources/terminator-config;
-      ".config/polybar/launch.sh" = {
-        source = ./resources/polybar-launch.sh;
+      ".config/polybar" = {
+        source = ./resources/polybar;
+        recursive = true;
+      };
+      ".config/polybar/scripts/launch.sh" = {
+        text = ''
+          #!${pkgs.zsh}/bin/zsh
+          polybar-msg cmd quit
+          echo "---" | tee -a /tmp/polybar1.log
+          polybar example 2>&1 | tee -a /tmp/polybar1.log &
+          disown
+          echo "Bars launched..."
+        '';
         executable = true;
       };
-      ".config/polybar/config.ini".source = ./resources/polybar-config.ini;
-      ".config/wallpapers" = {
-        recursive = true;
-        source = ./resources/wallpapers;
+      ".config/polybar/scripts/stoic-quote.sh" = {
+        text = ''
+          #!${pkgs.zsh}/bin/zsh
+
+          API="https://www.biblegateway.com/votd/get/?format=json&version=kjv"
+
+          RESPONSE_DATA=$(curl -sf $API)
+
+          echo $(echo $RESPONSE_DATA | jq -r '"\(.votd.content) - \(.votd.display_ref)"') || echo ""
+        '';
+        executable = true;
+      };
+      ".config/alacritty/alacritty.yml".source = ./resources/alacritty.yml;
+    };
+  };
+
+  services = {
+    picom = {
+      enable = true;
+      settings = {
+        blur-method = "dual_kawase";
+        blur-strength = 8.0;
+        kernel = "11x11gaussian";
+        blur-background = false;
+        blur-background-frame = true;
+        blur-background-fixed = true;
+        blur-background-exclude = [ "window_type != 'dock'" ];
       };
     };
-
   };
 
   fonts.fontconfig.enable = true;
