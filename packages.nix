@@ -10,6 +10,7 @@ let
     bat
     gh
     nil
+    nixpkgs-fmt
     
     killall
     tree
