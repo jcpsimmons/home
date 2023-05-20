@@ -2,8 +2,6 @@
 
 let
   nixTools = with pkgs; [
-    cachix
-    lorri
     ponysay
     jq
     fzf
@@ -11,13 +9,16 @@ let
     ripgrep
     bat
     gh
-    rnix-lsp
+    nil
+    
     killall
     tree
     speedtest-cli
     neovim
     cowsay
     htop
+    yabai
+    sketchybar
 
     #flakes
     (builtins.getFlake "github:jcpsimmons/prsearch/63618ec2d04e5ae227e10588b221471e391664d1").packages."${pkgs.system}".default
