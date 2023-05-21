@@ -11,6 +11,7 @@ let
     gh
     nil
     nixpkgs-fmt
+    iterm2
     
     killall
     tree
