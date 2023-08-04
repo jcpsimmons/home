@@ -20,7 +20,7 @@ let
     htop
 
     #flakes
-    (builtins.getFlake "github:jcpsimmons/prsearch/63618ec2d04e5ae227e10588b221471e391664d1").packages."${pkgs.system}".default
+    (builtins.getFlake "github:jcpsimmons/prsearch/e8920022e247c3c813851bb8e61139cd958101a3").packages."${pkgs.system}".default
   ];
 in
 nixTools
