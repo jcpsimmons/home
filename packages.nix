@@ -18,6 +18,7 @@ let
     neovim
     cowsay
     htop
+    nixpkgs-fmt
 
     #flakes
     (builtins.getFlake "github:jcpsimmons/prsearch/e8920022e247c3c813851bb8e61139cd958101a3").packages."${pkgs.system}".default
